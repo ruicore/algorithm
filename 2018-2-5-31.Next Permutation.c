@@ -11,7 +11,7 @@ void nextPermutation(int* nums, int numsSize)
 	int left = 0, right = 0;
 	int pos_small = 0;
 	
-	while (tmp<nums[pos])//找到不是依次增长的数
+	while (tmp<=nums[pos])//找到不是依次增长的数
 	{
 		tmp = nums[pos];
 		pos--;
@@ -31,7 +31,7 @@ void nextPermutation(int* nums, int numsSize)
 	else
 	{
 		pos_small = pos + 1;
-		while (nums[pos_small] >= nums[pos] && pos_small < numsSize)
+		while (nums[pos_small] > nums[pos] && pos_small < numsSize)
 		{
 			pos_small++;
 		}
