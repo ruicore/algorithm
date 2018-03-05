@@ -1,3 +1,4 @@
+//leetcode37
 int* getVaildNum(char** board, int i, int j)
 {
 	int k = 0, l = 0;
