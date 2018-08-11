@@ -6,12 +6,11 @@
 *.user
 *.userosscache
 *.sln.docstates
-*.txt
 *.ico
 *.png
 temp.*
 time.py
-*.jpg
+.vscode
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
