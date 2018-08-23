@@ -18,8 +18,8 @@ def DirectInsertionSort():
         compare = number_list[index]
         while before >= 0 and compare <= number_list[before]:
             number_list[before+1] = number_list[before]
-            number_list[before] = compare
             before -= 1
+        number_list[before+1] = compare
     print("%-*s" % (15, "Sorted List"), number_list)
 
 
