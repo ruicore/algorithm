@@ -2,7 +2,7 @@
 # @Author:             何睿
 # @Create Date:        2018-11-14 16:59:14
 # @Last Modified by:   何睿
-# @Last Modified time: 2018-11-14 20:46:45
+# @Last Modified time: 2018-11-14 20:53:36
 
 import re
 
@@ -69,7 +69,7 @@ class Solution(object):
 
 
 class QuickSolution(object):
-    # 通用方法
+    # 快速方法
     def calculate(self, s):
         num = 0
         sign = 1
@@ -80,25 +80,29 @@ class QuickSolution(object):
             if item.isdigit():
                 num = num * 10 + ord(item)-ord("0")
             elif item == "+":
-                total = total + num
+                total += sign*num
+                sign = 1
                 num = 0
             elif item == "-":
-                total = total - num
+                total += sign * num
+                sign = -1
                 num = 0
             elif item == "(":
-                stack.append(total)
+                stack.append((total, sign))
+                sign = 1
                 total = 0
                 num = 0
             elif item == ")":
-                total = total+stack.pop()
-                total = 0
+                total += sign*num
+                pretoatal, presign = stack.pop()
+                total = pretoatal+presign*total
                 num = 0
-            print(total)
         if num:
-            total +=num
+            total += num*sign
         return total
+
 
 if __name__ == "__main__":
     so = QuickSolution()
-    res = so.calculate("2+9-(1-2)")
+    res = so.calculate("1-(5)")
     print(res)
