@@ -149,7 +149,7 @@ class Solution3:
                 else:
                     leftmax = height[left]
                 left += 1
-            # 这里隐藏了一点是当height[left]  height[right]时，rightmax一定小于等于height[left]
+            # 同理，当height[left]>height[right]时，rightmax一定小于等于height[left]
             if height[left] > height[right]:
                 if rightmax > height[right]:
                     water += rightmax-height[right]
