@@ -1,4 +1,4 @@
-# LeeCode 57. Insert Interval
+# LeetCode 57. Insert Interval
 
 ## Description
 
