@@ -13,7 +13,8 @@ _file_name = create_time[:10]+"-"+"-".join(sys.argv[1:])+".py"
 _file_name_2 = create_time[:10]+"-"+"-".join(sys.argv[1:])+".md"
 with open(_file_name_2, 'w', encoding='utf-8') as f:
     f.write("# LeetCode "+ sys.argv[1]+ ". "+" ".join(sys.argv[2:]))
-    pass
+    f.write("\n\n")
+    f.write("## Description")
 with open(_file_name, 'w', encoding='utf-8') as f:
     f.seek(0)
     f.write("# -*- coding: utf-8 -*-\n")
