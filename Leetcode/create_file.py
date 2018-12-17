@@ -12,6 +12,7 @@ create_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time()))
 _file_name = create_time[:10]+"-"+"-".join(sys.argv[1:])+".py"
 _file_name_2 = create_time[:10]+"-"+"-".join(sys.argv[1:])+".md"
 with open(_file_name_2, 'w', encoding='utf-8') as f:
+    f.write("# LeetCode "+ sys.argv[1]+ ". "+" ".join(sys.argv[2:]))
     pass
 with open(_file_name, 'w', encoding='utf-8') as f:
     f.seek(0)
