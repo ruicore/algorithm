@@ -37,8 +37,6 @@ class Solution:
                     i = i-1
                     # 数组弹出最后一个单词的索引
                     sequence.pop()
-                elif count == maxWidth:
-                    pass
                 # 空格字符的个数 = 最大宽度 - 所有单词所占据的个数
                 space = maxWidth - (count - nums)
                 # 如果当前行不止一个单词
