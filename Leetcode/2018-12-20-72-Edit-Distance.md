@@ -41,7 +41,7 @@ exection -> execution (insert 'u')
 * 题意是给定两个单词，问将单词1变成单词二最少需要几次操作.允许的操作是:替换一个字符，增加一个字符，删除一个字符.类似数据库的增删改.
 * 此题目考察[动态规划](https://zh.wikipedia.org/zh-hans/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92).
 
-![LeetCode 72. Edit Distance](https://wp.me/aaizn9-Vl)
+![LeetCode 72. Edit Distance](https://www.ruicore.cn/wp-content/uploads/2018/12/LeetCode-72-Edit-Distance.svg)
 
 * 我们维护一个二维数组Matrixp\[row]\[col],如上图.接下来以字符串C1\[3]和C2\[2]为例说明(以下数组下标从1开始).
 * 我们有三种方法把C1\[1:3]变成C2\[1:2]
