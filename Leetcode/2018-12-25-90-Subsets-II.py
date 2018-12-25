@@ -33,5 +33,5 @@ class Solution:
 
 if __name__ == "__main__":
     so = Solution()
-    res = so.subsetsWithDup([1, 1, 2, 2, 6, 7])
+    res = so.subsetsWithDup([1, 1, 6, 2])
     print(res)
