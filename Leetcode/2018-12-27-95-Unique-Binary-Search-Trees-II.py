@@ -27,13 +27,14 @@ class Solution:
         return self.recursion(1, n)
 
     def recursion(self, left, right):
+        # res用于存储构成的所有可能的子树
         res = []
         if left > right:
             return []
         for i in range(left, right+1):
-            # 生成左子树
+            # 生成所有可能的左子树
             LeftNode = self.recursion(left, i-1)
-            # 生成右子树
+            # 生成所有可能的右子树
             RightNonde = self.recursion(i+1, right)
             # 如果左右子树都为空，说明当前节点是叶子节点
             if not LeftNode and not RightNonde:
@@ -41,21 +42,27 @@ class Solution:
                 res.append(TreeNode(i))
             # 如果左子树为空右子树不为空
             elif not LeftNode:
-                # 遍历右子树之中的节点
+                # 遍历遍历产生的所有的可能的右子树
                 for item in RightNonde:
+                    # 以当前节点作为根节点
                     root = TreeNode(i)
                     root.right = item
+                    # 向结果中添加产生的所有子树
                     res.append(root)
                 # 如果右子树为空且左子树不为空
             elif not RightNonde:
-                # 遍历左子树之中的节点
+                # 遍历所有可能的的左子树
                 for item in LeftNode:
+                    # 以当前节点作为根节点
                     root = TreeNode(i)
                     root.left = item
+                    # 向结果中添加产生的所有树
                     res.append(root)
             else:
-                # 如果左右子树都不为空
+                # 如果左右子树都不为空，将产生的所有左子树与右子树匹配
+                # 遍历所有的左子树
                 for i in LeftNode:
+                    # 遍历所有的右子树
                     for j in RightNonde:
                         root = TreeNode(i)
                         # 添加左子树
@@ -96,7 +103,7 @@ class Solution2(object):
 
 
 if __name__ == "__main__":
-    so = Solution()
-    res = so.generateTrees(3)
+    so = Solution2()
+    res = so.generateTrees(2)
     for item in res:
         print(item)
