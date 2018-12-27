@@ -31,25 +31,36 @@ class Solution:
         if left > right:
             return []
         for i in range(left, right+1):
+            # 生成左子树
             LeftNode = self.recursion(left, i-1)
+            # 生成右子树
             RightNonde = self.recursion(i+1, right)
+            # 如果左右子树都为空，说明当前节点是叶子节点
             if not LeftNode and not RightNonde:
+                # 在结果数组中追加叶子节点
                 res.append(TreeNode(i))
+            # 如果左子树为空右子树不为空
             elif not LeftNode:
+                # 遍历右子树之中的节点
                 for item in RightNonde:
                     root = TreeNode(i)
                     root.right = item
                     res.append(root)
+                # 如果右子树为空且左子树不为空
             elif not RightNonde:
+                # 遍历左子树之中的节点
                 for item in LeftNode:
                     root = TreeNode(i)
                     root.left = item
                     res.append(root)
             else:
+                # 如果左右子树都不为空
                 for i in LeftNode:
                     for j in RightNonde:
                         root = TreeNode(i)
+                        # 添加左子树
                         root.left = i
+                        # 添加右子树
                         root.right = j
                         res.append(root)
         return res
