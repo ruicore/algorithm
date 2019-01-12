@@ -33,3 +33,4 @@ class Solution:
             # 后入栈则先出
             if top.left:
                 stack.append(top.left)
+        return res
