@@ -10,8 +10,8 @@
 *.png
 temp.*
 time.py
-create_file.py
-head_info.py
+create.py
+head.py
 .vscode
 
 # User-specific files (MonoDevelop/Xamarin Studio)
