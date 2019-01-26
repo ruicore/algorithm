@@ -25,5 +25,5 @@ class Solution:
             # 如果相同的值索引差小于等于k，返回True
             if len(dic[num]) > 1 and dic[num][-1] - dic[num][-2] <= k:
                 return True
-        # 如果遍历完都没有找到满足条件的值，返回False
+        # 如果遍历整个数组都没有找到满足条件的值，返回False
         return False
