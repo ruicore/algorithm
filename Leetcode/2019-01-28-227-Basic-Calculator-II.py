@@ -31,7 +31,7 @@ class Solution:
                 if not stack2:
                     stack2.append(item)
                 else:
-                    # 如果当前操作符优先级大于等于符号栈栈顶操作符，我们持续进行运算
+                    # 如果当前操作符优先级小于等于符号栈栈顶操作符，我们持续进行运算
                     while stack2 and self.compare(stack2[-1], item):
                         # 从数字栈中取出两个数字
                         num1, num2 = stack1.pop(), stack1.pop()
@@ -55,7 +55,7 @@ class Solution:
         if operator == "/": return num1 // num2
 
     def compare(self, op1, op2):
-        # op2的优先级<=op1的优先级返回True
+        # op2的优先级>=op1的优先级返回True
         # 否则返回False
         if (op1 == "+" or op1 == "-") and (op2 == '+' or op2 == "-"):
             return True
