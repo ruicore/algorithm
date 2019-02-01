@@ -22,6 +22,7 @@ Explanation: Digit 1 occurred in the following numbers: 1, 10, 11, 12, 13.
 
 ### 思路
 
+![LeetCode 233. Number of Digit One](https://www.ruicore.cn/wp-content/uploads/2019/02/LeetCode-233.-Number-of-Digit-One.svg)
 * 这道题是找规律的题目.
 * 我们每一位每一位进行运算.
 * 如上图，以百位middle为例：
