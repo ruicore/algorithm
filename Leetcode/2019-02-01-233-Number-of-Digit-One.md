@@ -2,116 +2,73 @@
 
 ## Description
 
-Implement the following operations of a queue using stacks.
+Given an integer n, count the total number of digit 1 appearing in all non-negative integers less than or equal to n.
 
-push(x) -- Push element x to the back of queue.
-pop() -- Removes the element from in front of queue.
-peek() -- Get the front element.
-empty() -- Return whether the queue is empty.
 Example:
 
-MyQueue queue = new MyQueue();
-
-queue.push(1);
-queue.push(2);  
-queue.peek();  // returns 1
-queue.pop();   // returns 1
-queue.empty(); // returns false
-Notes:
-
-You must use only standard operations of a stack -- which means only push to top, peek/pop from top, size, and is empty operations are valid.
-Depending on your language, stack may not be supported natively. You may simulate a stack by using a list or deque (double-ended queue), as long as you use only standard operations of a stack.
-You may assume that all operations are valid (for example, no pop or peek operations will be called on an empty queue).
+Input: 13
+Output: 6 
+Explanation: Digit 1 occurred in the following numbers: 1, 10, 11, 12, 13.
 
 ## 描述
 
-使用栈实现队列的下列操作：
+给定一个整数 n，计算所有小于等于 n 的非负整数中数字 1 出现的个数。
 
-push(x) -- 将一个元素放入队列的尾部。
-pop() -- 从队列首部移除元素。
-peek() -- 返回队列首部的元素。
-empty() -- 返回队列是否为空。
 示例:
 
-MyQueue queue = new MyQueue();
-
-queue.push(1);
-queue.push(2);  
-queue.peek();  // 返回 1
-queue.pop();   // 返回 1
-queue.empty(); // 返回 false
-说明:
-
-你只能使用标准的栈操作 -- 也就是只有 push to top, peek/pop from top, size, 和 is empty 操作是合法的。
-你所使用的语言也许不支持栈。你可以使用 list 或者 deque（双端队列）来模拟一个栈，只要是标准的栈操作即可。
-假设所有操作都是有效的 （例如，一个空的队列不会调用 pop 或者 peek 操作）。
+输入: 13
+输出: 6 
+解释: 数字 1 出现在以下数字中: 1, 10, 11, 12, 13 。
 
 ### 思路
 
-* 使用两个栈来模拟一个队列，我们使用instack来存储值，使用outstack来辅助取出值.
-* 当要存储值时，我们将值压入instack栈顶.
-* 当要取出队首值时，我们将instak中的所有值压入outstack中，取出outstack的栈顶值记为res，然后将outstack中的所有值在压会instack中.
-* 访问队首值时，返回元素instack\[0].
-* 检查队列是否为空，我们只需要检查instack是否为空.
+* 这道题是找规律的题目.
+* 我们每一位每一位进行运算.
+* 如上图，以百位middle为例：
+1.如果百位为0，则我们另百位为1，个位和十位构成的数字right从0取到99，有100种取法，前面部分的构成的数字从0取到9765，一共有9766中取法，也就是说在给定值的百位为0情况下，小于该数字的所有数字中，百位为1的有9766\*100个数字.
+2.如果百位本身为1，那么个位和十位构成的数字right从0取到99，有仍然有100种取法，前面部分的构成的数字从0取到9765，一共有9766中取法，百位本身为1，我们另百位前面所有的数不变，仍然有19（right）种取法，所以在定值的百位为0情况下，小于该数字的所有数字中，百位为1的有9766\*100+right个数字.
+3.如果给定的百位数大于1，可以分析得出一共有（right+1)\*100种取法.
+4.同理其他情况也一样.
 
 ```python
 # -*- coding: utf-8 -*-
 # @Author:             何睿
-# @Create Date:        2019-02-01 12:53:35
+# @Create Date:        2019-02-01 12:57:09
 # @Last Modified by:   何睿
-# @Last Modified time: 2019-02-01 14:29:28
+# @Last Modified time: 2019-02-01 14:28:55
 
 
-class MyQueue(object):
-    def __init__(self):
+class Solution:
+    def countDigitOne(self, n):
         """
-        Initialize your data structure here.
-        """
-        # 用两个栈来模拟队列
-        self.instack = []
-        self.outstack = []
-
-    def push(self, x):
-        """
-        Push element x to the back of queue.
-        :type x: int
-        :rtype: void
-        """
-        # 插入队列时，我们将值放入instack栈顶
-        self.instack.append(x)
-
-    def pop(self):
-        """
-        Removes the element from in front of queue and returns that element.
+        :type n: int
         :rtype: int
         """
-        # 需要弹出队首的元素时
-        # 我们先将instack中所有的元素弹出到outstack中
-        while self.instack:
-            self.outstack.append(self.instack.pop())
-        # 我们取outstack中的最后一个元素
-        res = self.outstack.pop()
-        # 然后我们将所有outstack所有的元素放回
-        while self.outstack:
-            self.instack.append(self.outstack.pop())
+        res = 0
+        # 如果是负数，直接返回零
+        if n <= 0: return res
+        # 当前位置左边的所有数，当前位置的值，当前位置右边的值
+        left, right, middle, factor = 1, 1, 1, 1
+        # 循环条件，当left不为零（即左边还有数的时候）
+        while left:
+            # 取左边部分
+            left = n // (factor * 10)
+            # 取当前位置的值
+            middle = n // factor % 10
+            # 取当前位置右边的值
+            right = n % factor
+            # 如果当前位置的值为0
+            if middle == 0:
+                res += left * factor
+            # 如果当前的值为1
+            elif middle == 1:
+                res += left * factor + right + 1
+            # 如果当前的值大于等于2
+            else:
+                res += (left + 1) * factor
+            factor *= 10
+        # 返回最终的结果
         return res
-
-    def peek(self):
-        """
-        Get the front element.
-        :rtype: int
-        """
-        # 返回栈底元素
-        return self.instack[0]
-
-    def empty(self):
-        """
-        Returns whether the queue is empty.
-        :rtype: bool
-        """
-        # 检查instack是否为空
-        return not self.instack
 ```
-
-源代码文件在[这里](https://github.com/ruicore/Algorithm/blob/master/Leetcode/2019-02-01-232-Implement-Queue-using-Stacks.py).
+源代码文件在[这里](https://github.com/ruicore/Algorithm/blob/master/Leetcode/2019-02-01-233-Number-of-Digit-One.py).
 ©本文首发于[何睿的博客](https://www.ruicore.cn/leetcode-233-number-of-digit-one/)，欢迎转载，转载需保留文章来源，作者信息和本声明.
