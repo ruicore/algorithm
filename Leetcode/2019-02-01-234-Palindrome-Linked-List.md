@@ -32,6 +32,7 @@ Could you do it in O(n) time and O(1) space?
 
 ### 思路
 
+![LeetCode 234. Palindrome Linked List](https://www.ruicore.cn/wp-content/uploads/2019/02/LeetCode-234.-Palindrome-Linked-List.svg)
 * 我们将链表的前半部分反转，形成两个链表.
 * 然后对链表进行比较.
 
