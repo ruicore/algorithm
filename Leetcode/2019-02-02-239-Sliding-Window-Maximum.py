@@ -6,7 +6,7 @@
 
 from collections import deque
 
-# 实现一个单调非递减队列，继承于deque
+# 实现一个单调非递增队列，继承于deque
 class MonotonicQueue(deque):
     def __init__(self):
         self.queue = deque()
