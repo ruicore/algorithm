@@ -9,5 +9,5 @@ class Solution:
     def canWinNim(self, n: 'int') -> 'bool':
         # 如果是4的倍数，一定会失败
         if not n % 4: return False
-        # 返回成功
+        # 否则一定赢，返回True
         return True
