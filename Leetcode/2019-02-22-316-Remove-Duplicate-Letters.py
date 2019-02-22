@@ -7,9 +7,9 @@
 import collections
 
 
-class Solution:
+class Solution: 
     def removeDuplicateLetters(self, s: 'str') -> 'str':
-        # stack 用于存储结果
+        # stack 用于存储已经获取的结果
         # visited 表示当前的字符已经遍历过
         stack, visited = [], set()
         # times 是一个字典，键为字符，值为字符出现过的次数
