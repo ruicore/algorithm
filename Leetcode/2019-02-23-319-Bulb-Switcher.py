@@ -19,7 +19,7 @@ class Solution:
             i += 2
             # 记录去掉的次数
             count += 1
-        # 次数就是剩下的晾着的灯泡个数
+        # 次数就是剩下的亮着的灯泡个数
         return count
 
     def bulbSwitch3(self, n: int) -> int:
