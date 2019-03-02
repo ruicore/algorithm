@@ -52,7 +52,7 @@ class Solution:
         return count
 ```
 
-源代码文件在 这里 。
-©本文是原创文章，欢迎转载，转载需保留 文章来源 ，作者信息和本声明.
-©本文首发于 何睿的博客 ，欢迎转载，转载需保留 文章来源 ，作者信息和本声明.
+源代码文件在 [这里](https://github.com/ruicore/Algorithm/blob/master/Leetcode/2019-03-02-327-Count-of-Range-Sum.py) 。
+©本文是原创文章，欢迎转载，转载需保留 [文章来源](https://www.ruicore.cn/leetcode-327-count-of-range-sum/) ，作者信息和本声明.
+©本文首发于 [何睿的博客](https://www.ruicore.cn/leetcode-327-count-of-range-sum/) ，欢迎转载，转载需保留 [文章来源](https://www.ruicore.cn/leetcode-327-count-of-range-sum/) ，作者信息和本声明.
 微信公众号：techruicore 
