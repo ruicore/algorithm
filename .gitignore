@@ -11,7 +11,7 @@
 temp.*
 time.py
 .vscode
-.yml
+*.yml
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
