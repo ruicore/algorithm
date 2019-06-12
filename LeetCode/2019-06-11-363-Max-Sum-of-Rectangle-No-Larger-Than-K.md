@@ -90,5 +90,5 @@ class Solution:
 
         return res if res <= k else None
 ```
-源代码文件在 [这里](https://github.com/ruicore/Algorithm/blob/master/Leetcode/2019-06-11-363-Max-Sum-of-Rectangle-No-Larger-Than-K.py) 。
+源代码文件在 [这里](https://github.com/ruicore/Algorithm/blob/master/LeetCode/2019-06-11-363-Max-Sum-of-Rectangle-No-Larger-Than-K.py) 。
 ©本文首发于 何睿的博客 ，欢迎转载，转载需保留 [文章来源](https://www.ruicore.cn/leetcode-363-max-sum-of-rectangle-no-larger-than-k/) ，作者信息和本声明.
