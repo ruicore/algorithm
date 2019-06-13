@@ -12,8 +12,7 @@ class Solution:
             middle = left + ((right - left) >> 1)
             tmp = middle ** 2
             if tmp == num:
-                if isinstance(middle, int):
-                    return True
+                return True
             elif tmp < num:
                 left = middle + 1
             else:
