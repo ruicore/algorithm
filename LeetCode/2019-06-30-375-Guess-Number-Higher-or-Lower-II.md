@@ -14,13 +14,13 @@ Example:
 
 n = 10, I pick 8.
 
-First round:  You guess 5, I tell you that it's higher. You pay $5.
-Second round: You guess 7, I tell you that it's higher. You pay $7.
-Third round:  You guess 9, I tell you that it's lower. You pay $9.
+First round:  You guess 5, I tell you that it's higher. You pay \$5.
+Second round: You guess 7, I tell you that it's higher. You pay \$7.
+Third round:  You guess 9, I tell you that it's lower. You pay \$9.
 
 Game over. 8 is the number I picked.
 
-You end up paying $5 + $7 + $9 = $21.
+You end up paying \$5 + \$7 + \$9 = $21.
 Given a particular n ≥ 1, find out how much money you need to have to guarantee a win.
 
 ## 描述
@@ -56,6 +56,7 @@ n = 10, 我选择了8.
 * 同理可以获得 c3，c4 .... c10,题目要求的是 res = max(c1,c2...c10)，也就是说在范围 n 内，无论被猜的数是几，使用 res 数量的钱一定可以把这个数猜出来。
 * 从上面的过程可以看到，不论被猜的数是几，我们都可以从 n 的中间值开始猜起，然后一路猜到被猜的数，这是一种猜的策略。
 * 有没有更好的猜的策略呢？有的。题目要求的是：在使用这种策略下，至少需要的钱数。以下以 n 为 10为例，说明一下此时得最优策略。如下图：
+![n 为 10 的路径](https://i2.wp.com/www.ruicore.cn/wp-content/uploads/2019/06/image-1.png?w=411&ssl=1)
 * 当 n 为 10 时，无论被猜得数是什么，我们总是从 7 开始猜，下面给出每个一数得猜出路径；
 * 7-->3-->1,10;
 * 7-->3-->2,10;
@@ -105,4 +106,4 @@ class Solution(object):
 ```
 
 源代码文件在 [这里](https://github.com/ruicore/Algorithm/blob/master/LeetCode/2019-06-30-375-Guess-Number-Higher-or-Lower-II.py) 。
-©本文首发于 何睿的博客 ，欢迎转载，转载需保留 文章来源 ，作者信息和本声明.
+©本文首发于 何睿的博客 ，欢迎转载，转载需保留 [文章来源](https://www.ruicore.cn/leetcode-375-guess-number-higher-or-lower-ii/) ，作者信息和本声明.
