@@ -25,4 +25,3 @@ class Solution(object):
             res = guess(num)
 
         return num
-                
