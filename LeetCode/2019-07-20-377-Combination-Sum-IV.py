@@ -14,6 +14,7 @@ class Solution:
         dp = [0 for _ in range(target + 1)]
         dp[0] = 1
         for i in range(1, target + 1):
+            # dp[i] = sum(map(lambda j: dp[i - j], filter(lambda j: i - j >= 0, nums)))
             dp[i] = sum(dp[i - j] for j in nums if i - j >= 0)
 
         return dp[-1]
