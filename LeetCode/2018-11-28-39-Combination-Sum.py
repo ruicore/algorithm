@@ -2,34 +2,28 @@
 # @Author:             何睿
 # @Create Date:        2018-11-28 18:20:58
 # @Last Modified by:   何睿
-# @Last Modified time: 2018-11-30 18:09:32
+# @Last Modified time: 2019-08-18 07:11:56
 
-        
+
+from typing import List
+
+
 class Solution:
-    def combinationSum(self, candidates, target):
-        """
-        :type candidates: List[int]
-        :type target: int
-        :rtype: List[List[int]]
-        """
+    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         res = []
         candidates.sort()
         self.dfs(candidates, target, 0, [], res)
         return res
 
     def dfs(self, candidates, target, index, path, res):
+
+        if target == 0:
+            res.append(list(path))
+
         for i in range(index, len(candidates)):
             if candidates[i] > target:
-                break
-            elif candidates[i] == target:
-                res.append([candidates[i]] + path)
-                break
-            else:
-                self.dfs(candidates, target -candidates[i], i, [candidates[i]] + path, res)
+                return
 
-
-if __name__ == "__main__":
-    a = [2, 3, 6, 7]
-    target = 7
-    so = Solution()
-    so.combinationSum(a, target)
+            path.append(candidates[i])
+            self.dfs(candidates, target - candidates[i], i, path, res)
+            path.pop()
