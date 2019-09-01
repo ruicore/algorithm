@@ -11,9 +11,8 @@ from collections import defaultdict
 class Solution(object):
 
     def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
-        cached = dict()
         graph = self.__build_graph(equations, values)
-        return list(map(lambda query: self.__query(graph, query[0], query[1], set(), cached), queries))
+        return list(map(lambda query: self.__query(graph, query[0], query[1], set()), queries))
 
     def __build_graph(self, equations, values):
         graph = defaultdict(dict)
@@ -24,23 +23,19 @@ class Solution(object):
 
         return graph
 
-    def __query(self, garph, start, end, visited, cached):
+    def __query(self, garph, start, end, visited):
 
         if start not in garph and end not in garph:
             return -1.0
         if start == end:
             return 1.0
-        if (start, end) in cached:
-            return cached[(start, end)]
 
         visited.add(start)
         for next_ in garph[start]:
             if next_ in visited:
                 continue
-            tmp = self.__query(garph, next_, end, visited, cached)
+            tmp = self.__query(garph, next_, end, visited)
             if tmp > -1:
-                answer = tmp * garph[start][next_]
-                cached[(start, end)] = answer
-                return answer
+                return tmp * garph[start][next_]
 
         return -1
