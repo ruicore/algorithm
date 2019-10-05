@@ -15,7 +15,7 @@ class Solution:
         left, right, count = max(nums), prefix_sum[-1], len(nums)
 
         while left < right:
-            middle = (left + right) // 2
+            middle = left + ((right - left) >> 1)
             if self.is_greater(prefix_sum, middle, m, count):
                 left = middle + 1
             else:
