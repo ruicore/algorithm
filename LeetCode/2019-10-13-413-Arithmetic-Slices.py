@@ -23,7 +23,7 @@ class Solution:
             start = next_ + 1
             next_ = self._count(A, d, dp, start)
 
-        return sum(filter(lambda x: x > 0, dp))
+        return sum(dp)
 
     def _count(self, A, d, dp, start):
 
