@@ -83,5 +83,4 @@ class Solution:
 ```
 
 源代码文件在 [这里](https://github.com/ruicore/Algorithm/blob/master/LeetCode/2019-11-30-421-Maximum-XOR-of-Two-Numbers-in-an-Array.py) 。
-©本文是原创文章，欢迎转载，转载需保留 [文章来源](https://ruicore.cn/leetcode-421-maximum-xor-of-two-numbers-in-an-array/) ，作者信息和本声明.
 ©本文首发于 何睿的博客 ，欢迎转载，转载需保留 [文章来源](https://ruicore.cn/leetcode-421-maximum-xor-of-two-numbers-in-an-array/) ，作者信息和本声明.
