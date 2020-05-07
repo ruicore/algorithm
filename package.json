@@ -1,0 +1,28 @@
+{
+  "name": "Algorithm",
+  "version": "1.0.0",
+  "description": ">Learning Data Structures and Algorithms，Programming implementate some algorithms.   If you find **any mistake** in my file, or you had any idea to improve my assignment, please let me know without any hesitation.(Please email me at super76rui@icloud.com)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruicore/Algorithm.git"
+  },
+  "keywords": [],
+  "author": "何睿",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruicore/Algorithm/issues"
+  },
+  "homepage": "https://github.com/ruicore/Algorithm#readme",
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.2.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
