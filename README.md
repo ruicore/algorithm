@@ -37,4 +37,5 @@ LeetCode 常见题目的考察内容涵盖不同的类型。比如有考察 `动
 ## Contact
 
 如果有任何问题，欢迎交流联系
+
 <img src="wechat.jpeg" width = "220" align=center />
