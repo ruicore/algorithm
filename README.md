@@ -34,8 +34,8 @@ LeetCode 常见题目的考察内容涵盖不同的类型。比如有考察 `动
 
 最后，**如果这个仓库给到您了帮助，请给予一个 Star**，这也是对我的鼓励，是我持续更新的动力。
 
-## Contact
+## 赞赏
 
-如果有任何问题，欢迎交流联系
+如果本仓库对你有用，欢迎赞赏一杯咖啡
 
-<img src="wechat.jpeg" width = "220" align=center />
+<img src="receive.jpeg" width = "220" align=center />
