@@ -36,6 +36,4 @@ LeetCode 常见题目的考察内容涵盖不同的类型。比如有考察 `动
 
 ## 赞赏
 
-如果本仓库对你有用，欢迎赞赏一杯咖啡
-
-<img src="receive.jpeg" width = "220" align=center />
+如果本仓库对你有用，欢迎点个 star 😊
